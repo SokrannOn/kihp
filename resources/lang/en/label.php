@@ -47,7 +47,12 @@
         'email' => 'Email',
         'password' => 'Password',
         'confirm' => 'Confirm',
-        'role' => 'Role'
+        'role' => 'Role',
+        'client' => 'Client',
+        'title' => 'Title',
+        'category_name' => 'Category Name',
+        'logo' => 'Logo',
+        'browse' => 'Browse',
 
     ]
 
