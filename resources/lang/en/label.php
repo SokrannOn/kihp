@@ -48,6 +48,8 @@
         'password' => 'Password',
         'confirm' => 'Confirm',
         'role' => 'Role',
+        'brand'=>'Brand',
+        'active'=>'Active',
         'client' => 'Client',
         'title' => 'Title',
         'category_name' => 'Category Name',

@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Article' => $baseDir . '/app/Article.php',
+    'App\\Brand' => $baseDir . '/app/Brand.php',
     'App\\Category' => $baseDir . '/app/Category.php',
     'App\\Categoryproduct' => $baseDir . '/app/Categoryproduct.php',
     'App\\Client' => $baseDir . '/app/Client.php',
@@ -25,6 +26,7 @@ return array(
     'App\\Http\\Controllers\\PositionController' => $baseDir . '/app/Http/Controllers/PositionController.php',
     'App\\Http\\Controllers\\RoleController' => $baseDir . '/app/Http/Controllers/RoleController.php',
     'App\\Http\\Controllers\\UserController' => $baseDir . '/app/Http/Controllers/UserController.php',
+    'App\\Http\\Controllers\\brandController' => $baseDir . '/app/Http/Controllers/brandController.php',
     'App\\Http\\Controllers\\categoryProductController' => $baseDir . '/app/Http/Controllers/categoryProductController.php',
     'App\\Http\\Controllers\\productController' => $baseDir . '/app/Http/Controllers/productController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
@@ -57,6 +59,7 @@ return array(
     'Collective\\Html\\HtmlFacade' => $vendorDir . '/laravelcollective/html/src/HtmlFacade.php',
     'Collective\\Html\\HtmlServiceProvider' => $vendorDir . '/laravelcollective/html/src/HtmlServiceProvider.php',
     'CreateArticlesTable' => $baseDir . '/database/migrations/2017_12_12_184631_create_articles_table.php',
+    'CreateBrandsTable' => $baseDir . '/database/migrations/2018_03_13_185857_create_brands_table.php',
     'CreateCategoriesTable' => $baseDir . '/database/migrations/2018_03_02_181755_create_categories_table.php',
     'CreateCategoryproductsTable' => $baseDir . '/database/migrations/2018_03_06_182951_create_categoryproducts_table.php',
     'CreateClientsTable' => $baseDir . '/database/migrations/2018_03_15_100409_create_clients_table.php',
@@ -65,6 +68,7 @@ return array(
     'CreatePositionsTable' => $baseDir . '/database/migrations/2017_11_22_175734_create_positions_table.php',
     'CreateProductsTable' => $baseDir . '/database/migrations/2018_03_13_180412_create_products_table.php',
     'CreateRolesTable' => $baseDir . '/database/migrations/2017_11_22_175923_create_roles_table.php',
+    'CreateTableBrandLanguage' => $baseDir . '/database/migrations/2018_03_15_183024_create_table_brand_language.php',
     'CreateTableCategoryLanguage' => $baseDir . '/database/migrations/2018_03_05_184118_create_table_category_language.php',
     'CreateTableCategoryproductLanguage' => $baseDir . '/database/migrations/2018_03_09_180131_create_table_categoryproduct_language.php',
     'CreateTableClientLanguage' => $baseDir . '/database/migrations/2018_03_15_101103_create_table_client_language.php',
