@@ -73,6 +73,8 @@
         Route::get('/get/select/language/{id}','CategoryController@getSelectLanguage');
         Route::get('/get/select/parent/{id}','CategoryController@selectParent');
 
+        //category
+        Route::resource('/client','ClientController');
 
 
 

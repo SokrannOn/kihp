@@ -56,7 +56,21 @@ class brandController extends Controller
 
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'name' =>'required'
+        ],[
+            'name.required' => 'Name field required'
+        ]);
+        $b = Brand::find($id);
+        $b->name = $request->name;
+        if($request->active=='on'){
+            $b->active = 1;
+        }else{
+            $b->active = 0;
+        }
+        $b->user_id = Auth::user()->id;
+        $b->save();
+        return redirect()->back();
     }
 
 

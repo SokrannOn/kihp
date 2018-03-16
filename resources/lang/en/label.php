@@ -48,8 +48,16 @@
         'password' => 'Password',
         'confirm' => 'Confirm',
         'role' => 'Role',
+<<<<<<< HEAD
         'brand'=>'Brand',
         'active'=>'Active'
+=======
+        'client' => 'Client',
+        'title' => 'Title',
+        'category_name' => 'Category Name',
+        'logo' => 'Logo',
+        'browse' => 'Browse',
+>>>>>>> f004aca35e47e521900556c885a8bbdf300a31a3
 
     ]
 

@@ -4,6 +4,9 @@
         <div class="form-group">
             <span class="{{Lang::locale()==='kh' ? 'kh-os' : 'arial'}}">{{trans('label.name')}}</span>
             {!! Form::text('name',null,['class'=>Lang::locale()==='kh' ? 'kh-os edit-form-control text-blue' : 'arial edit-form-control text-blue','required','placeholder'=>trans('label.fill')]) !!}
+            @if($errors->has('name'))
+                <span class="text-danger">{{$errors->first('name')}}</span>
+            @endif
         </div>
     </div>
 </div>

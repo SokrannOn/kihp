@@ -21,26 +21,23 @@ class CategoryController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
 //        $locale = Lang::locale();
 //        $l = Language::where('code',$locale)->value('id');
 //        $lang = Language::find($l);
 //        $category = $lang->categories()->where('trash',0)->get();
 //        return view('admin.categories.index',compact('category','l'));
 
-        $cat = Category::all();
-        foreach ($cat as $c){
-            foreach ($c->languages as $l){
-                echo $l->pivot->name;
-            }
-        }
-=======
+//        $cat = Category::all();
+//        foreach ($cat as $c){
+//            foreach ($c->languages as $l){
+//                echo $l->pivot->name;
+//            }
+//        }
         $locale = Lang::locale();
         $l = Language::where('code',$locale)->value('id');
         $lang = Language::find($l);
         $category = $lang->categories()->where('trash',0)->get();
         return view('admin.categories.index',compact('category','l'));
->>>>>>> f4e6d7b5b18ee79bd8f4c376842254f933444ccb
     }
 
     /**

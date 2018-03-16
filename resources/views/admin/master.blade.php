@@ -236,6 +236,8 @@
 <script src="{{asset('bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 <!-- DataTables -->
 
+{{--text editor--}}
+<script src="{{asset('//cdn.tinymce.com/4/tinymce.min.js')}}"></script>
 
 
 
