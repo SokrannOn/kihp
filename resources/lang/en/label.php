@@ -47,7 +47,9 @@
         'email' => 'Email',
         'password' => 'Password',
         'confirm' => 'Confirm',
-        'role' => 'Role'
+        'role' => 'Role',
+        'brand'=>'Brand',
+        'active'=>'Active'
 
     ]
 
