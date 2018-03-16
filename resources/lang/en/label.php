@@ -53,6 +53,7 @@
         'category_name' => 'Category Name',
         'logo' => 'Logo',
         'browse' => 'Browse',
+        'description' => 'Description'
 
     ]
 

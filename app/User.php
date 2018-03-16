@@ -28,7 +28,9 @@ class User extends Authenticatable
     public function categories(){
         return $this->hasMany(Category::class,'user_added');
     }
-
+    public function clients(){
+        return $this->hasMany(Client::class,'user_added');
+    }
 
     public function isAdmin(){
         if($this->role->name =="administrator"){

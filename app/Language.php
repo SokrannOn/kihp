@@ -14,4 +14,7 @@ class Language extends Model
     public function categories(){
         return $this->belongsToMany(Category::class)->withTimestamps()->withPivot('id','name');
     }
+    public function clients(){
+        return $this->belongsToMany(Client::class)->withTimestamps()->withPivot('id','title','description','logo');
+    }
 }

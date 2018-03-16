@@ -8,7 +8,7 @@
                 {{trans('label.client')}}
             </div>
             <div class="panel-body">
-                    {!! Form::open(['method'=>'post','id'=>'client']) !!}
+                {!! Form::open(['action'=>'ClientController@store','method'=>'POST','files'=>true]) !!}
                 <div class="row">
                     <div class="col-md-10">
                         <div class="row">
@@ -109,12 +109,15 @@
 
             </div>
             <div class="panel-footer">
-                <div id="viewCategory">
-                    <div class="center">
-                        <i class="fa fa-spinner fa-spin" style="font-size:24px"> </i> <span>&nbsp; Wait...</span>
+                <div class="container-fluid">
+                    <div id="viewClient">
+                        <div class="center">
+                            <i class="fa fa-spinner fa-spin" style="font-size:24px"> </i> <span>&nbsp; Wait...</span>
+                        </div>
                     </div>
                 </div>
             </div>
+
             <div id="testing">
 
             </div>
@@ -201,13 +204,15 @@
                 }
             });
         });
-        function getViewCategory() {
+
+        function getViewClient() {
             $.ajax({
                 type:'get',
-                url:"{{route('category.index')}}",
+                url:"{{route('client.index')}}",
                 dataType:'html',
                 success:function (data) {
-                    $('#viewCategory').html(data);
+                    $('#viewClient').html(data);
+                    $('#clienttable').dataTable();
                 },
                 error:function (error) {
                     console.log(error);
@@ -215,38 +220,38 @@
             });
         }
         $(document).ready(function () {
-            getViewCategory();
+            getViewClient();
         });
 
-        $('#category').submit(function (e) {
-            e.preventDefault();
-            var data = $('#category').serialize();
-            $.ajax({
-                type : 'post',
-                url  : "{{route('category.store')}}",
-                data : data,
-                dataType: 'json',
-                beforeSend:function () {
-                },
-                success:function (data) {
-                    var serialnumber="<option value=''>{{trans('label.choose_item')}}</option>";
-                    $.map(data.language,function(value ,key){
-                        serialnumber+="<option value=" + key + ">" + value + "</option>";
-                    });
-                    $('#lang').html(serialnumber);
+        {{--$('#client').submit(function (e) {--}}
+            {{--e.preventDefault();--}}
+            {{--var data = $('#client').serialize();--}}
+            {{--$.ajax({--}}
+                {{--type : 'post',--}}
+                {{--url  : "{{route('client.store')}}",--}}
+                {{--data : data,--}}
+                {{--dataType: 'json',--}}
+                {{--beforeSend:function () {--}}
+                {{--},--}}
+                {{--success:function (data) {--}}
+                    {{--var serialnumber="<option value=''>{{trans('label.choose_item')}}</option>";--}}
+                    {{--$.map(data.language,function(value ,key){--}}
+                        {{--serialnumber+="<option value=" + key + ">" + value + "</option>";--}}
+                    {{--});--}}
+                    {{--$('#lang').html(serialnumber);--}}
 
-                    $('#category')[0].reset();
-                    $('#category_id').val(data.id);
-                    $(document).ready(function () {
-                        getViewCategory();
-                        getSelectParent();
-                    });
-                },
-                error:function (error) {
-                    console.log(error);
-                }
-            });
-        });
+                    {{--$('#client')[0].reset();--}}
+                    {{--$('#client_id').val(data.id);--}}
+                    {{--$(document).ready(function () {--}}
+                        {{--getViewClient();--}}
+                        {{--getSelectParent();--}}
+                    {{--});--}}
+                {{--},--}}
+                {{--error:function (error) {--}}
+                    {{--console.log(error);--}}
+                {{--}--}}
+            {{--});--}}
+        {{--});--}}
 
         function updatePos(id) {
             $.ajax({
@@ -262,7 +267,7 @@
             });
         }
 
-        function deleteLanguage(id) {
+        function deleteClient(id) {
             swal({
                 title: "{{trans('label.are_you_sure')}}",
                 text: "{{trans('label.are_you_sure_delete')}}",
@@ -274,14 +279,14 @@
                 confirmButtonColor: "#ec6c62"
             }, function() {
                 $.ajax({
-                    url : "{{url('/category/delete')}}"+"/"+id,
+                    url : "{{url('/client/delete')}}"+"/"+id,
                     type: "get",
                     dataType: 'html'
                 })
                     .done(function(data) {
                         swal("Deleted!", "Your file was successfully deleted!", "success");
                         $(document).ready(function () {
-                            getViewLanguage();
+                            getViewClient();
                         });
                     })
                     .error(function(data) {
@@ -290,23 +295,23 @@
             });
         }
 
-        function getSelectParent() {
-            $.ajax({
-                type: 'get',
-                url: "{{url('/get/select/parent')}}",
-                dataType: 'json',
-                success: function (response) {
-                    console.log(response);
-                    var serialnumber="<option value=''>{{trans('label.choose_item')}}</option>";
-                        $.map(response,function(value ,key){
-                            serialnumber+="<option value=" + key + ">" + value + "</option>";
-                        });
-                    $('#par').html(serialnumber);
-                },
-                error: function (error) {
-                    console.log(error);
-                }
-            });
-        }
+        {{--function getSelectParent() {--}}
+            {{--$.ajax({--}}
+                {{--type: 'get',--}}
+                {{--url: "{{url('/get/select/parent')}}",--}}
+                {{--dataType: 'json',--}}
+                {{--success: function (response) {--}}
+                    {{--console.log(response);--}}
+                    {{--var serialnumber="<option value=''>{{trans('label.choose_item')}}</option>";--}}
+                        {{--$.map(response,function(value ,key){--}}
+                            {{--serialnumber+="<option value=" + key + ">" + value + "</option>";--}}
+                        {{--});--}}
+                    {{--$('#par').html(serialnumber);--}}
+                {{--},--}}
+                {{--error: function (error) {--}}
+                    {{--console.log(error);--}}
+                {{--}--}}
+            {{--});--}}
+        {{--}--}}
     </script>
 @endsection
