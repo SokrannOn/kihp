@@ -180,7 +180,7 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         $cat = Category::find($id);
-        $cat->trash = 0;
+        $cat->trash = 1;
         $cat->save();
     }
     public function getSelectParent()

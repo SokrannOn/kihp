@@ -29,7 +29,7 @@
                 <td>{{$c->user->name}}</td>
                 <td class="center">
                     <a class="cursor-pointer padding-7px"​​ onclick='editCat("{{$c->id}}","{{$c->pivot->language_id}}")' data-toggle="modal" data-target=".bs-example-modal-sm"><i class="fa fa-edit"></i></a>
-                    <a href="#" onclick="deleteLanguage('{{$c->id}}')"><i class="fa fa-trash icon-delete"></i></a>
+                    <a href="#" onclick="deleteCat('{{$c->id}}')"><i class="fa fa-trash icon-delete"></i></a>
 
                 </td>
             </tr>
