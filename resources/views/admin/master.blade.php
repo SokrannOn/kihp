@@ -242,6 +242,8 @@
 
 
 <script src="{{ asset('js/app.js') }}"></script>
+<script src="{{asset('//cdn.tinymce.com/4/tinymce.min.js')}}"></script>
+
 @yield('script')
 {{--datetimepicker--}}
 {{--<script src="{{asset('js/bootstrap-datetimepicker.js')}}"></script>--}}

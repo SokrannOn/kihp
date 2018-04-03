@@ -55,6 +55,12 @@
         'category_name' => 'Category Name',
         'logo' => 'Logo',
         'browse' => 'Browse',
+        'price_list'=>'Price List Product',
+        'product_name'=>'Product Name',
+        'description'=>'Description',
+        'attribute'=>'Attribute',
+        'back'=>'Back',
+        'picdetail'=>'More image...'
 
     ]
 

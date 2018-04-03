@@ -18,4 +18,18 @@ class Language extends Model
     public function brands(){
         return $this->belongsToMany(Brand::class)->withTimestamps()->withPivot('id','name');
     }
+
+    public function products(){
+        return $this->belongsToMany(Product::class)->withTimestamps()->withPivot('id','name','description');
+    }
+
+    public function promotions(){
+        return $this->belongsToMany(Promotion::class)->withTimestamps()->withPivot('id','name','description');
+    }
+
+    public function aboutuses(){
+        return $this->belongsToMany(Aboutus::class)->withTimestamps()->withPivot('id','description');
+
+    }
+
 }

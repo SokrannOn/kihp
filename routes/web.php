@@ -1,6 +1,7 @@
 <?php
 
-    Route::get('/','DefaultController@index')->middleware('tran');
+    Route::get('/','DefaultController@index')->name('front')->middleware('tran');
+    Route::get('/admin/locale/front/{locale}','DefaultController@frontLocale');
 
     Route::group(['middleware'=>['checklog','tran','auth','web']],function (){
 
@@ -57,12 +58,23 @@
         Route::get('/category/product/change/parent/{id}','categoryProductController@changeParent');
         Route::get('/category/product/edit/{id}/{language_id}','categoryProductController@edit');
         Route::get('/category/product/delete/{id}','categoryProductController@show');
+        //Price List
+        Route::resource('/pricelist','priceLishController');
+
+
+
 
         //Brand
         Route::resource('/brand','brandController');
         Route::get('/brand/edit/{id}','brandController@edit');
         //product
         Route::resource('/product','productController');
+        Route::get('/product/get-content/view','productController@getViewContent');
+        Route::get('/product/delete/{id}','productController@show');
+        Route::get('/product/delete/{id}','productController@show');
+        Route::get('/product/view-detail/{id}','productController@detail');
+        Route::get('/product/delete-image-detail/{id}','productController@deletImgdetail');
+
 
         //category
         Route::resource('/category','CategoryController');
@@ -75,6 +87,17 @@
 
         //category
         Route::resource('/client','ClientController');
+
+        //promotion
+        Route::resource('/promotion','promotionController');
+        Route::get('/promotion/view-promotion/list','promotionController@viewList');
+        Route::get('/promotion/delete/{id}','promotionController@show');
+        Route::get('/promotion/view-detail/{id}','promotionController@viewPro');
+
+        //About Us
+        Route::resource('/aboutus','aboutUsController');
+        Route::get('/aboutus/delete-record/{id}','aboutUsController@deleteAb');
+
 
 
 

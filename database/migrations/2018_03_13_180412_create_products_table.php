@@ -16,6 +16,7 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('brand_id');
+            $table->string('photo',255);
             $table->integer('categoryproduct_id');
             $table->boolean('publish');
             $table->boolean('trash')->default(0);
