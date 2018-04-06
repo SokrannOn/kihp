@@ -46,7 +46,7 @@
         'user_name' => 'User Name',
         'email' => 'Email',
         'password' => 'Password',
-        'confirm' => 'Confirm',
+        'confirm' => 'Confirm Password',
         'role' => 'Role',
         'brand'=>'Brand',
         'active'=>'Active',
@@ -55,7 +55,28 @@
         'category_name' => 'Category Name',
         'logo' => 'Logo',
         'browse' => 'Browse',
-        'description' => 'Description'
+        'description' => 'Description',
+        'news' => 'News',
+        'reference' => 'Source',
+        'summarize' => 'Summarize',
+        'image_required' => 'Photo is required',
+        'image_mimes' => 'Photo only (jpg,png)',
+        'image_size' => 'Your photo big then 2MB.',
+        'main_photo' => 'Main Photo',
+        'job_category' => 'Employments',
+        'job_type' => 'Job Types',
+        'career' => 'Career',
+        'location' => 'Location',
+        'close_date' => 'Close Date',
+        'detail' => 'Detail',
+        'company_name' => 'Company Name',
+        'phone_number' => 'Phone Number',
+        'website' => 'Website',
+        'address' => 'Address',
+        'contact' => 'Contact',
+        'photo' => 'Photo',
+        'new_password' => 'New Password',
+        'save' => 'Save'
 
     ]
 

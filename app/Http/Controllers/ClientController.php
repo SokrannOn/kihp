@@ -58,11 +58,11 @@ class ClientController extends Controller
     public function store(Request $request)
     {
         //get logo
-        $time =Carbon::now()->toDateString();
+        $time =Carbon::now()->format('s');
         $logo="logo.png";
         if($file =$request->file('image')){
             $logo=$time."_".$file->getClientOriginalName();
-            $file->move('photo',$logo);
+            $file->move('clientlogo',$logo);
         }
 
         $array_one[$request->language_id]=$request->language_id;
@@ -97,6 +97,7 @@ class ClientController extends Controller
 
             if ($request->publish == 1) {
                 $client->publish = $request->publish;
+                $client->publish_date = Carbon::now()->toDateString();
             } else {
                 $client->publish = 0;
             }
@@ -135,11 +136,13 @@ class ClientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id,$langId)
     {
-        //
+        $l = Language::find($langId);
+        $data = $l->clients()->where('client_id',$id)->get();
+        $cat = $l->categories()->where('trash',0)->pluck('name','category_id');
+        return view('admin.clients.edit',compact('data','cat'));
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -149,7 +152,35 @@ class ClientController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $cli = Client::find($id);
+        if($request->category_id) {
+            $cli->category_id = $request->category_id;
+        }else{
+            $cli->category_id = 0;
+        }
+        if ($request->publishedit=='on'){
+            $cli->publish = 1;
+        }else{
+            $cli->publish = 0;
+        }
+        $cli->user_modifies = Auth::user()->id;
+        $cli->save();
+        //get logo
+        $time =Carbon::now()->format('s');
+        $logo="logo.png";
+        if($file =$request->file('imageEdit')){
+            $logo=$time."_".$file->getClientOriginalName();
+            $file->move('clientlogo',$logo);
+            $logoName = DB::table('client_language')->select('logo')->where('id',$request->pivotId)->value('logo');
+            if($logoName!='logo.png'){
+
+                unlink(public_path('clientlogo/'.$logoName));
+            }
+
+        }
+
+        DB::table('client_language')->where('id',$request->pivotId)->update(['title'=>$request->title,'description'=>$request->description,'logo'=>$logo]);
+        return redirect(route('client.create'));
     }
 
     /**

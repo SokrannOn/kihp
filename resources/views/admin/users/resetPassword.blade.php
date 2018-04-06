@@ -5,8 +5,8 @@
                     {!! Form::model($user,['action'=>['UserController@resetPasswordSuccess',$user->id],'method'=>'patch']) !!}
                     <div class="row">
                         <div class="col-lg-12">
-                            {!! Form::label('password','&nbsp;Password',['class'=>'edit-label']) !!}
-                            {!! Form::password('password',['class'=>'edit-form-control','pattern'=>'.{8,}','placeholder'=>'Password','onchange'=>"this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 8 characters' : '');
+                            <span class="{{Lang::locale()=='kh'? 'kh-os required' : 'arial'}}">{{trans('label.new_password')}}</span>
+                            {!! Form::password('password',['class'=>Lang::locale()=='kh'? 'kh-os edit-form-control text-blue height-35' : 'arial edit-form-control text-blue height-35','pattern'=>'.{8,}','placeholder'=>trans('label.new_password'),'onchange'=>"this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 8 characters' : '');
                             if(this.checkValidity()) form.confirm_pass.pattern = this.value;",'required'=>true ]) !!}
                             @if($errors->has('password'))
                                 <span class="text-danger">{{$errors->first('password')}}</span>
@@ -15,15 +15,15 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
-                            {!! Form::label('confirm','&nbsp;Confirm',['class'=>'edit-label']) !!}
-                            {!! Form::password('confirm',['class'=>'edit-form-control','placeholder'=>'Confirm password','pattern'=>'.{8,}','onchange'=>"this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');", 'required'=>true ]) !!}
+                            <span class="{{Lang::locale()=='kh'? 'kh-os required' : 'arial'}}">{{trans('label.confirm')}}</span>
+                            {!! Form::password('confirm_pass',['class'=>Lang::locale()=='kh'? 'kh-os edit-form-control text-blue height-35' : 'arial edit-form-control text-blue height-35','placeholder'=>trans('label.confirm'),'pattern'=>'.{8,}','onchange'=>"this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');", 'required'=>true ]) !!}
 
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            {!! Form::submit('Save',['class'=>'btn btn-success btn-sm']) !!}
-                            <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
+                            {!! Form::submit(trans('label.save'),['class'=>Lang::locale()==='kh' ? 'kh-os btn btn-primary btn-sm':'arial btn btn-primary btn-sm']) !!}
+                            <a data-dismiss="modal" class="{{Lang::locale()==='kh' ? 'kh-os btn btn-danger btn-sm':'arial btn btn-danger btn-sm'}}">{{trans('label.close')}}</a>
                         </div>
 
                     </div>

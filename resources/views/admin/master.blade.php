@@ -23,6 +23,8 @@
 
     {{--sweet alert--}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    {{--crop photo--}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.min.css">
     {{--  select2 css  --}}
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 
@@ -237,7 +239,7 @@
 <!-- DataTables -->
 
 {{--text editor--}}
-<script src="{{asset('//cdn.tinymce.com/4/tinymce.min.js')}}"></script>
+{{--<script src="{{asset('//cdn.tinymce.com/4/tinymce.min.js')}}"></script>--}}
 
 
 
@@ -245,6 +247,8 @@
 @yield('script')
 {{--datetimepicker--}}
 {{--<script src="{{asset('js/bootstrap-datetimepicker.js')}}"></script>--}}
+{{--crop photo--}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 {{--  select2  --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 <script src="{{asset('bower_components/datatables.net/js/jquery.dataTables.min.js')}}"></script>

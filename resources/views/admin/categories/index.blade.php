@@ -25,7 +25,13 @@
                     echo \Illuminate\Support\Facades\DB::table('category_language')->select('name')->where('category_id',$c->parent)->where('language_id',$l)->value('name');
                     ?>
                 </td>
-                <td class="center">{{$c->publish==0 ? trans('label.no') : trans('label.yes') }}</td>
+                <td class="center">
+                    @if($c->publish==0)
+                        <i class='fa fa-lock text-red text-sm'></i>
+                    @else
+                        <i class='fa fa-globe text-green text-sm'></i>
+                    @endif
+                </td>
                 <td>{{$c->user->name}}</td>
                 <td class="center">
                     <a class="cursor-pointer padding-7px"​​ onclick='editCat("{{$c->id}}","{{$c->pivot->language_id}}")' data-toggle="modal" data-target=".bs-example-modal-sm"><i class="fa fa-edit"></i></a>

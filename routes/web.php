@@ -15,6 +15,7 @@
         Route::patch('/admin/role/update/{id}','RoleController@updateRole');
 
         //Position Route
+        Route::get('/admin/position/index','PositionController@index');
         Route::get('/admin/position/create','PositionController@createPosition');
         Route::post('/admin/position/store','PositionController@store');
         Route::get('/admin/position/delete/{id}','PositionController@deletePosition');
@@ -76,6 +77,35 @@
         //client
         Route::resource('/client','ClientController');
         Route::get('/client/delete/{id}','ClientController@destroy');
+        Route::get('/client/edit/{id}/{langId}','ClientController@edit');
+
+        //news
+        Route::resource('/news','NewsController');
+        Route::get('/news/delete/{id}','NewsController@destroy');
+        Route::get('/news/edit/{id}/{langId}','NewsController@edit');
+
+        //jobcategory
+        Route::resource('/jobcategory','JobcategoryController');
+        Route::get('/jobcategory/delete/{id}','JobcategoryController@destroy');
+        Route::get('/jobcategory/edit/{id}/{langId}','JobcategoryController@edit');
+
+        //jobtype
+        Route::resource('/jobtype','JobtypeController');
+        Route::get('/jobtype/delete/{id}','JobtypeController@destroy');
+        Route::get('/jobtype/edit/{id}/{langId}','JobtypeController@edit');
+
+        //career
+        Route::resource('/career','CareerController');
+        Route::get('/career/delete/{id}','CareerController@destroy');
+        Route::get('/career/edit/{id}/{langId}','CareerController@edit');
+        Route::get('/get/select/by/language/{id}','CareerController@selectByLanguage');
+        Route::get('/get/view/{id}/{langId}','CareerController@show');
+
+        //contact
+        Route::resource('/contact','ContactController');
+        Route::get('/contact/edit/{id}','ContactController@edit');
+        Route::patch('/contact/update/{id}','ContactController@update');
+        Route::get('/contact/delete/{id}','ContactController@destroy');
 
 
 

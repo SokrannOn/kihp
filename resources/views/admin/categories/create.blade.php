@@ -197,7 +197,7 @@
                     .done(function(data) {
                         swal("Deleted!", "Your file was successfully deleted!", "success");
                         $(document).ready(function () {
-                            getViewLanguage();
+                            getViewCategory();
                         });
                     })
                     .error(function(data) {

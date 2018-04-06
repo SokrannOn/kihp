@@ -21,8 +21,8 @@
             <tr>
                 <?php $logo = $c->pivot->logo;?>
                 <td style="line-height: 50px" class="center">{{$i++}}</td>
-                <td style="line-height: 50px" class="center"><img src='{{asset("photo/$logo")}}' alt="no image" style="background: white;border:2px solid #00A6C7;border-radius: 50px;padding:1px;height: 50px; width: 50px;"></td>
-                <td style="line-height: 50px">{{$c->date}}</td>
+                <td style="line-height: 50px" class="center"><img src='{{asset("clientlogo/$logo")}}' alt="no image" style="background: white;border:2px solid #00A6C7;border-radius: 50px;padding:1px;height: 50px; width: 50px;"></td>
+                <td style="line-height: 50px">{{ \Carbon\Carbon::parse($c->date)->format('d-M-Y')}}</td>
                 <td style="line-height: 50px">
                     <?php
                         echo \Illuminate\Support\Facades\DB::table('category_language')->select('name')->where('category_id',$c->category_id)->where('language_id',$l)->value('name');
@@ -39,9 +39,8 @@
                 </td>
                 <td style="line-height: 50px">{{$c->user->name}}</td>
                 <td style="line-height: 50px" class="center">
-                    <a class="cursor-pointer padding-7px"​​ onclick='editClient("{{$c->id}}","{{$c->pivot->language_id}}")' data-toggle="modal" data-target=".bs-example-modal-sm"><i class="fa fa-edit"></i></a>
+                    <a href="{{url('client/edit'.'/'.$c->id.'/'.$c->pivot->language_id)}}" class="cursor-pointer padding-7px"​​><i class="fa fa-edit"></i></a>
                     <a href="#" onclick="deleteClient('{{$c->id}}')"><i class="fa fa-trash icon-delete"></i></a>
-
                 </td>
             </tr>
         @endforeach

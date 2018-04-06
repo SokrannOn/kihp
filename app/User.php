@@ -25,11 +25,26 @@ class User extends Authenticatable
     public function position(){
         return $this->belongsTo(Position::class);
     }
+    public function positions(){
+        return $this->hasMany(Position::class);
+    }
     public function categories(){
         return $this->hasMany(Category::class,'user_added');
     }
     public function clients(){
         return $this->hasMany(Client::class,'user_added');
+    }
+    public function activities(){
+        return $this->hasMany(Activity::class,'user_added');
+    }
+    public function jobcategories(){
+        return $this->hasMany(Jobcategory::class,'user_added');
+    }
+    public function jobtypes(){
+        return $this->hasMany(Jobtype::class,'user_added');
+    }
+    public function careers(){
+        return $this->hasMany(Career::class,'user_added');
     }
 
     public function isAdmin(){

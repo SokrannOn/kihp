@@ -8,6 +8,7 @@
                 {{trans('label.client')}}
             </div>
             <div class="panel-body">
+                <div id="editCli">
                 {!! Form::open(['action'=>'ClientController@store','method'=>'POST','files'=>true]) !!}
                 <div class="row">
                     <div class="col-md-10">
@@ -58,7 +59,7 @@
                             <div class="col-md-8 col-xs-5 col-sm-2">
                                 <div class="form-group">
                                     {{--<span style="margin-left: 25px;" class="{{\Illuminate\Support\Facades\Lang::locale()=='kh'? 'kh-os' : 'arial'}}">{{trans('label.logo')}}</span>--}}
-                                    <img src="{{asset('/photo/logo.png')}}" alt="" id="preView" style="height: 90px; width: 90px; border-radius: 50px; border: 2px solid #346895; padding: 2px;">
+                                    <img src="{{asset('/clientlogo/logo.png')}}" alt="" id="preView" style="height: 90px; width: 90px; border-radius: 50px; border: 2px solid #346895; padding: 2px;">
                                 </div>
                             </div>
                             <div class="col-md-2"></div>
@@ -102,6 +103,7 @@
                     {!! Form::reset(trans('label.reset'),['class'=>Lang::locale()==='kh' ? 'kh-os btn btn-warning btn-sm':'arial btn btn-warning btn-sm']) !!}
                 </div>
                 {!! Form::close() !!}
+                </div>
 
                 <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
                     <div id="editCat"></div>
@@ -126,17 +128,8 @@
 @endsection
 
 @section('script')
+    <script src="{{asset('//cdn.tinymce.com/4/tinymce.min.js')}}"></script>
     <script type="text/javascript">
-
-        var loadFile = function(event) {
-            var output = document.getElementById('preView');
-            output.src = URL.createObjectURL(event.target.files[0]);
-        };
-        var loadFileEdit = function(event) {
-            var output = document.getElementById('preViewEdit');
-            output.src = URL.createObjectURL(event.target.files[0]);
-        };
-
         var editor_config = {
             path_absolute : "/",
             selector: "textarea.description",
@@ -151,14 +144,14 @@
             file_browser_callback : function(field_name, url, type, win) {
                 var x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
                 var y = window.innerHeight|| document.documentElement.clientHeight|| document.getElementsByTagName('body')[0].clientHeight;
-
+                //
                 var cmsURL = editor_config.path_absolute + 'laravel-filemanager?field_name=' + field_name;
                 if (type == 'image') {
                     cmsURL = cmsURL + "&type=Images";
                 } else {
                     cmsURL = cmsURL + "&type=Files";
                 }
-
+                //
                 tinyMCE.activeEditor.windowManager.open({
                     file : cmsURL,
                     title : 'Filemanager',
@@ -169,22 +162,18 @@
                 });
             }
         };
-
+        //
         tinymce.init(editor_config);
 
-        function editCat(id,langId) {
-            $.ajax({
-                type : 'get',
-                url : "{{url('/category/edit')}}"+"/"+id+"/"+langId,
-                dataType : 'html',
-                success:function (data) {
-                    $('#editCat').html(data);
-                },
-                error:function (error) {
-                    console.log(error);
-                }
-            });
-        }
+        var loadFile = function(event) {
+            var output = document.getElementById('preView');
+            output.src = URL.createObjectURL(event.target.files[0]);
+        };
+        var loadFileEdit = function(event) {
+            var output = document.getElementById('preViewEdit');
+            output.src = URL.createObjectURL(event.target.files[0]);
+        };
+
 
         $('#lang').on('change',function () {
             var langId = $(this).val();
@@ -223,49 +212,6 @@
             getViewClient();
         });
 
-        {{--$('#client').submit(function (e) {--}}
-            {{--e.preventDefault();--}}
-            {{--var data = $('#client').serialize();--}}
-            {{--$.ajax({--}}
-                {{--type : 'post',--}}
-                {{--url  : "{{route('client.store')}}",--}}
-                {{--data : data,--}}
-                {{--dataType: 'json',--}}
-                {{--beforeSend:function () {--}}
-                {{--},--}}
-                {{--success:function (data) {--}}
-                    {{--var serialnumber="<option value=''>{{trans('label.choose_item')}}</option>";--}}
-                    {{--$.map(data.language,function(value ,key){--}}
-                        {{--serialnumber+="<option value=" + key + ">" + value + "</option>";--}}
-                    {{--});--}}
-                    {{--$('#lang').html(serialnumber);--}}
-
-                    {{--$('#client')[0].reset();--}}
-                    {{--$('#client_id').val(data.id);--}}
-                    {{--$(document).ready(function () {--}}
-                        {{--getViewClient();--}}
-                        {{--getSelectParent();--}}
-                    {{--});--}}
-                {{--},--}}
-                {{--error:function (error) {--}}
-                    {{--console.log(error);--}}
-                {{--}--}}
-            {{--});--}}
-        {{--});--}}
-
-        function updatePos(id) {
-            $.ajax({
-                type:'get',
-                url:"{{url('/language/edit')}}"+"/"+id,
-                dataType:'html',
-                success:function (data) {
-                    $('#editlanguage').html(data);
-                },
-                error:function (error) {
-                    console.log(error);
-                }
-            });
-        }
 
         function deleteClient(id) {
             swal({
@@ -295,23 +241,9 @@
             });
         }
 
-        {{--function getSelectParent() {--}}
-            {{--$.ajax({--}}
-                {{--type: 'get',--}}
-                {{--url: "{{url('/get/select/parent')}}",--}}
-                {{--dataType: 'json',--}}
-                {{--success: function (response) {--}}
-                    {{--console.log(response);--}}
-                    {{--var serialnumber="<option value=''>{{trans('label.choose_item')}}</option>";--}}
-                        {{--$.map(response,function(value ,key){--}}
-                            {{--serialnumber+="<option value=" + key + ">" + value + "</option>";--}}
-                        {{--});--}}
-                    {{--$('#par').html(serialnumber);--}}
-                {{--},--}}
-                {{--error: function (error) {--}}
-                    {{--console.log(error);--}}
-                {{--}--}}
-            {{--});--}}
-        {{--}--}}
+        function cancel() {
+            window.location.reload();
+        }
+
     </script>
 @endsection
