@@ -34,4 +34,18 @@ class Language extends Model
     public function careers(){
         return $this->belongsToMany(Career::class)->withTimestamps()->withPivot('id','title','description');
     }
+
+    public function products(){
+        return $this->belongsToMany(Product::class)->withTimestamps()->withPivot('id','name','description');
+    }
+
+    public function promotions(){
+        return $this->belongsToMany(Promotion::class)->withTimestamps()->withPivot('id','name','description');
+    }
+
+    public function aboutuses(){
+        return $this->belongsToMany(Aboutus::class)->withTimestamps()->withPivot('id','description');
+
+    }
+
 }

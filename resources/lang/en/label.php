@@ -55,6 +55,7 @@
         'category_name' => 'Category Name',
         'logo' => 'Logo',
         'browse' => 'Browse',
+<<<<<<< HEAD
         'description' => 'Description',
         'news' => 'News',
         'reference' => 'Source',
@@ -77,6 +78,18 @@
         'photo' => 'Photo',
         'new_password' => 'New Password',
         'save' => 'Save'
+=======
+<<<<<<< HEAD
+        'price_list'=>'Price List Product',
+        'product_name'=>'Product Name',
+        'description'=>'Description',
+        'attribute'=>'Attribute',
+        'back'=>'Back',
+        'picdetail'=>'More image...'
+=======
+        'description' => 'Description'
+>>>>>>> de18b920b8ec91d8d1b8909bbd221b64f3425bc0
+>>>>>>> 6c5f9471c10610cfdca867719826f9cbd15d3543
 
     ]
 

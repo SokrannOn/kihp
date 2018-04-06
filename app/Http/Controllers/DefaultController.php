@@ -62,7 +62,7 @@ class DefaultController extends Controller
             return view('admin.dashboard');
         }
 //
-        return view('welcome');
+        return view('front.home');
     }
 
     public function AdminPanel(){
@@ -75,5 +75,8 @@ class DefaultController extends Controller
         $request->session()->put('locale',$lang);
     }
 
+    public function frontLocale(Request $request, $lang){
+        $request->session()->put('locale',$lang);
+    }
 
 }
