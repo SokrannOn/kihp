@@ -315,7 +315,10 @@ class ComposerStaticInitfd76d284e5545d00c4278faf06f611d2
         'App\\Aboutus' => __DIR__ . '/../..' . '/app/Aboutus.php',
         'App\\Article' => __DIR__ . '/../..' . '/app/Article.php',
         'App\\Brand' => __DIR__ . '/../..' . '/app/Brand.php',
+<<<<<<< HEAD
+=======
         'App\\Career' => __DIR__ . '/../..' . '/app/Career.php',
+>>>>>>> 4d1c881b0feea2ff9cff40ec255fe05297911e45
         'App\\Category' => __DIR__ . '/../..' . '/app/Category.php',
         'App\\Categoryproduct' => __DIR__ . '/../..' . '/app/Categoryproduct.php',
         'App\\Client' => __DIR__ . '/../..' . '/app/Client.php',
@@ -340,7 +343,10 @@ class ComposerStaticInitfd76d284e5545d00c4278faf06f611d2
         'App\\Http\\Controllers\\PositionController' => __DIR__ . '/../..' . '/app/Http/Controllers/PositionController.php',
         'App\\Http\\Controllers\\RoleController' => __DIR__ . '/../..' . '/app/Http/Controllers/RoleController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
+<<<<<<< HEAD
+=======
         'App\\Http\\Controllers\\aboutUsController' => __DIR__ . '/../..' . '/app/Http/Controllers/aboutUsController.php',
+>>>>>>> 4d1c881b0feea2ff9cff40ec255fe05297911e45
         'App\\Http\\Controllers\\brandController' => __DIR__ . '/../..' . '/app/Http/Controllers/brandController.php',
         'App\\Http\\Controllers\\categoryProductController' => __DIR__ . '/../..' . '/app/Http/Controllers/categoryProductController.php',
         'App\\Http\\Controllers\\priceLishController' => __DIR__ . '/../..' . '/app/Http/Controllers/priceLishController.php',
@@ -384,7 +390,10 @@ class ComposerStaticInitfd76d284e5545d00c4278faf06f611d2
         'CreateAboutusesTable' => __DIR__ . '/../..' . '/database/migrations/2018_04_01_134327_create_aboutuses_table.php',
         'CreateArticlesTable' => __DIR__ . '/../..' . '/database/migrations/2017_12_12_184631_create_articles_table.php',
         'CreateBrandsTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_13_185857_create_brands_table.php',
+<<<<<<< HEAD
+=======
         'CreateCareersTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_29_175846_create_careers_table.php',
+>>>>>>> 4d1c881b0feea2ff9cff40ec255fe05297911e45
         'CreateCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_02_181755_create_categories_table.php',
         'CreateCategoryproductsTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_06_182951_create_categoryproducts_table.php',
         'CreateClientsTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_15_100409_create_clients_table.php',

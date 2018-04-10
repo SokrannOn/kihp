@@ -31,6 +31,10 @@
             <li class="treeview"><a href="#"><i class="fa fa-briefcase" aria-hidden="true"></i><span class="{{Lang::locale()=== 'kh'? 'kh-os' : 'arial'}}">{{trans('label.categoryproduct')}}</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
                 <ul class="treeview-menu">
                     <li><a href="{{route('categoryproduct.create')}}">&nbsp;&nbsp;&nbsp;&nbsp; <span class="{{Lang::locale()=== 'kh'? 'kh-os' : 'arial'}}">{{trans('label.add_new')}}</span></a></li><li class="treeview">
+<<<<<<< HEAD
+                    <li><a href="{{route('categoryproduct.create')}}">&nbsp;&nbsp;&nbsp;&nbsp; <span class="{{Lang::locale()=== 'kh'? 'kh-os' : 'arial'}}">{{trans('label.add_new')}}</span></a></li>
+=======
+>>>>>>> 4d1c881b0feea2ff9cff40ec255fe05297911e45
                 </ul>
             </li>
 
@@ -43,7 +47,11 @@
 
 
             
+<<<<<<< HEAD
+            <li class="treeview"><a href="#"><i class="fa fa-tag" aria-hidden="true"></i><span class="{{Lang::locale()=== 'kh'? 'kh-os' : 'arial'}}">{{trans('label.category')}}</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+=======
            <li class="treeview"><a href="#"><i class="fa fa-tag" aria-hidden="true"></i><span class="{{Lang::locale()=== 'kh'? 'kh-os' : 'arial'}}">{{trans('label.category')}}</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+>>>>>>> 4d1c881b0feea2ff9cff40ec255fe05297911e45
                 <ul class="treeview-menu">
                     <li><a href="{{route('category.create')}}">&nbsp;&nbsp;&nbsp;&nbsp; <span class="{{Lang::locale()=== 'kh'? 'kh-os' : 'arial'}}">{{trans('label.add_new')}}</span></a></li><li class="treeview">
                 </ul>
@@ -71,6 +79,12 @@
                 </ul>
             </li>
 
+
+            <li class="treeview"><a href="#"><i class="fa fa-bold" aria-hidden="true"></i><span class="{{Lang::locale()=== 'kh'? 'kh-os' : 'arial'}}">{{trans('label.brand')}}</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                <ul class="treeview-menu">
+                    <li><a href="{{route('brand.create')}}">&nbsp;&nbsp;&nbsp;&nbsp; <span class="{{Lang::locale()=== 'kh'? 'kh-os' : 'arial'}}">{{trans('label.add_new')}}</span></a></li><li class="treeview">
+                </ul>
+            </li>
 
         </ul>
     </li>

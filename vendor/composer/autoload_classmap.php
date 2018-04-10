@@ -13,7 +13,10 @@ return array(
 >>>>>>> 6c5f9471c10610cfdca867719826f9cbd15d3543
     'App\\Article' => $baseDir . '/app/Article.php',
     'App\\Brand' => $baseDir . '/app/Brand.php',
+<<<<<<< HEAD
+=======
     'App\\Career' => $baseDir . '/app/Career.php',
+>>>>>>> 4d1c881b0feea2ff9cff40ec255fe05297911e45
     'App\\Category' => $baseDir . '/app/Category.php',
     'App\\Categoryproduct' => $baseDir . '/app/Categoryproduct.php',
     'App\\Client' => $baseDir . '/app/Client.php',
@@ -38,7 +41,10 @@ return array(
     'App\\Http\\Controllers\\PositionController' => $baseDir . '/app/Http/Controllers/PositionController.php',
     'App\\Http\\Controllers\\RoleController' => $baseDir . '/app/Http/Controllers/RoleController.php',
     'App\\Http\\Controllers\\UserController' => $baseDir . '/app/Http/Controllers/UserController.php',
+<<<<<<< HEAD
+=======
     'App\\Http\\Controllers\\aboutUsController' => $baseDir . '/app/Http/Controllers/aboutUsController.php',
+>>>>>>> 4d1c881b0feea2ff9cff40ec255fe05297911e45
     'App\\Http\\Controllers\\brandController' => $baseDir . '/app/Http/Controllers/brandController.php',
     'App\\Http\\Controllers\\categoryProductController' => $baseDir . '/app/Http/Controllers/categoryProductController.php',
     'App\\Http\\Controllers\\priceLishController' => $baseDir . '/app/Http/Controllers/priceLishController.php',
@@ -85,7 +91,10 @@ return array(
 >>>>>>> 6c5f9471c10610cfdca867719826f9cbd15d3543
     'CreateArticlesTable' => $baseDir . '/database/migrations/2017_12_12_184631_create_articles_table.php',
     'CreateBrandsTable' => $baseDir . '/database/migrations/2018_03_13_185857_create_brands_table.php',
+<<<<<<< HEAD
+=======
     'CreateCareersTable' => $baseDir . '/database/migrations/2018_03_29_175846_create_careers_table.php',
+>>>>>>> 4d1c881b0feea2ff9cff40ec255fe05297911e45
     'CreateCategoriesTable' => $baseDir . '/database/migrations/2018_03_02_181755_create_categories_table.php',
     'CreateCategoryproductsTable' => $baseDir . '/database/migrations/2018_03_06_182951_create_categoryproducts_table.php',
     'CreateClientsTable' => $baseDir . '/database/migrations/2018_03_15_100409_create_clients_table.php',

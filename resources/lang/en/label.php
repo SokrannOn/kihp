@@ -46,6 +46,11 @@
         'user_name' => 'User Name',
         'email' => 'Email',
         'password' => 'Password',
+<<<<<<< HEAD
+        'confirm' => 'Confirm',
+        'role' => 'Role',
+        'brand'=>'Brand'
+=======
         'confirm' => 'Confirm Password',
         'role' => 'Role',
         'brand'=>'Brand',
@@ -82,7 +87,16 @@
         'description'=>'Description',
         'attribute'=>'Attribute',
         'back'=>'Back',
+<<<<<<< HEAD
         'picdetail'=>'More image...',
+=======
+        'picdetail'=>'More image...'
+=======
+        'description' => 'Description'
+>>>>>>> de18b920b8ec91d8d1b8909bbd221b64f3425bc0
+>>>>>>> 6c5f9471c10610cfdca867719826f9cbd15d3543
+>>>>>>> 4d1c881b0feea2ff9cff40ec255fe05297911e45
+>>>>>>> e86ced3b87894561f90c1f57d37d1d36ad01daae
 
     ]
 

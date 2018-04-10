@@ -1,4 +1,13 @@
 @extends('admin.master')
+<<<<<<< HEAD
+
+@section('content')
+
+@endsection
+
+@section('script')
+
+=======
 @section('content')
     <br>
     <div class="container-fluid">
@@ -98,4 +107,5 @@
         }
 
     </script>
+>>>>>>> 4d1c881b0feea2ff9cff40ec255fe05297911e45
 @endsection

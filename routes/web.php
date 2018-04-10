@@ -62,12 +62,18 @@
         //Price List
         Route::resource('/pricelist','priceLishController');
 
+<<<<<<< HEAD
+        //Brand
+        Route::resource('/brand','brandController');
+
+=======
 
 
 
         //Brand
         Route::resource('/brand','brandController');
         Route::get('/brand/edit/{id}','brandController@edit');
+>>>>>>> 4d1c881b0feea2ff9cff40ec255fe05297911e45
         //product
         Route::resource('/product','productController');
         Route::get('/product/get-content/view','productController@getViewContent');
