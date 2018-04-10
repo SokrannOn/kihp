@@ -310,11 +310,9 @@ class ComposerStaticInitfd76d284e5545d00c4278faf06f611d2
     );
 
     public static $classMap = array (
-<<<<<<< HEAD
+
         'App\\Activity' => __DIR__ . '/../..' . '/app/Activity.php',
-=======
         'App\\Aboutus' => __DIR__ . '/../..' . '/app/Aboutus.php',
->>>>>>> 6c5f9471c10610cfdca867719826f9cbd15d3543
         'App\\Article' => __DIR__ . '/../..' . '/app/Article.php',
         'App\\Brand' => __DIR__ . '/../..' . '/app/Brand.php',
         'App\\Career' => __DIR__ . '/../..' . '/app/Career.php',
@@ -382,11 +380,8 @@ class ComposerStaticInitfd76d284e5545d00c4278faf06f611d2
         'Collective\\Html\\HtmlBuilder' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlBuilder.php',
         'Collective\\Html\\HtmlFacade' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlFacade.php',
         'Collective\\Html\\HtmlServiceProvider' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlServiceProvider.php',
-<<<<<<< HEAD
         'CreateActivitiesTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_23_183859_create_activities_table.php',
-=======
         'CreateAboutusesTable' => __DIR__ . '/../..' . '/database/migrations/2018_04_01_134327_create_aboutuses_table.php',
->>>>>>> 6c5f9471c10610cfdca867719826f9cbd15d3543
         'CreateArticlesTable' => __DIR__ . '/../..' . '/database/migrations/2017_12_12_184631_create_articles_table.php',
         'CreateBrandsTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_13_185857_create_brands_table.php',
         'CreateCareersTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_29_175846_create_careers_table.php',
@@ -404,7 +399,6 @@ class ComposerStaticInitfd76d284e5545d00c4278faf06f611d2
         'CreateProductsTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_13_180412_create_products_table.php',
         'CreatePromotionsTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_29_184009_create_promotions_table.php',
         'CreateRolesTable' => __DIR__ . '/../..' . '/database/migrations/2017_11_22_175923_create_roles_table.php',
-<<<<<<< HEAD
         'CreateTableActivityLanguage' => __DIR__ . '/../..' . '/database/migrations/2018_03_23_184250_create_table_activity_language.php',
         'CreateTableCareerLanguage' => __DIR__ . '/../..' . '/database/migrations/2018_03_29_180206_create_table_career_language.php',
         'CreateTableCategoryLanguage' => __DIR__ . '/../..' . '/database/migrations/2018_03_05_184118_create_table_category_language.php',
@@ -412,14 +406,12 @@ class ComposerStaticInitfd76d284e5545d00c4278faf06f611d2
         'CreateTableClientLanguage' => __DIR__ . '/../..' . '/database/migrations/2018_03_15_101103_create_table_client_language.php',
         'CreateTableJobcategoryLanguage' => __DIR__ . '/../..' . '/database/migrations/2018_03_28_192233_create_table_jobcategory_language.php',
         'CreateTableJobtypeLanguage' => __DIR__ . '/../..' . '/database/migrations/2018_03_28_215252_create_table_jobtype_language.php',
-=======
         'CreateTabelLanguageProduct' => __DIR__ . '/../..' . '/database/migrations/2018_03_23_182052_create_tabel_language_product.php',
         'CreateTableAboutusLanguage' => __DIR__ . '/../..' . '/database/migrations/2018_04_01_135429_create_table_aboutus_language.php',
         'CreateTableCategoryLanguage' => __DIR__ . '/../..' . '/database/migrations/2018_03_05_184118_create_table_category_language.php',
         'CreateTableCategoryproductLanguage' => __DIR__ . '/../..' . '/database/migrations/2018_03_09_180131_create_table_categoryproduct_language.php',
         'CreateTableClientLanguage' => __DIR__ . '/../..' . '/database/migrations/2018_03_15_101103_create_table_client_language.php',
         'CreateTableLanguagePromotion' => __DIR__ . '/../..' . '/database/migrations/2018_03_29_185209_create_table_language_promotion.php',
->>>>>>> 6c5f9471c10610cfdca867719826f9cbd15d3543
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/AbstractField.php',
         'Cron\\CronExpression' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/CronExpression.php',
