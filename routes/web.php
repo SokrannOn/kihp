@@ -58,6 +58,9 @@
         Route::get('/category/product/edit/{id}/{language_id}','categoryProductController@edit');
         Route::get('/category/product/delete/{id}','categoryProductController@show');
 
+        //Brand
+        Route::resource('/brand','brandController');
+
         //product
         Route::resource('/product','productController');
 

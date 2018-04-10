@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Article' => $baseDir . '/app/Article.php',
+    'App\\Brand' => $baseDir . '/app/Brand.php',
     'App\\Category' => $baseDir . '/app/Category.php',
     'App\\Categoryproduct' => $baseDir . '/app/Categoryproduct.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
@@ -24,6 +25,7 @@ return array(
     'App\\Http\\Controllers\\PositionController' => $baseDir . '/app/Http/Controllers/PositionController.php',
     'App\\Http\\Controllers\\RoleController' => $baseDir . '/app/Http/Controllers/RoleController.php',
     'App\\Http\\Controllers\\UserController' => $baseDir . '/app/Http/Controllers/UserController.php',
+    'App\\Http\\Controllers\\brandController' => $baseDir . '/app/Http/Controllers/brandController.php',
     'App\\Http\\Controllers\\categoryProductController' => $baseDir . '/app/Http/Controllers/categoryProductController.php',
     'App\\Http\\Controllers\\productController' => $baseDir . '/app/Http/Controllers/productController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
@@ -56,6 +58,7 @@ return array(
     'Collective\\Html\\HtmlFacade' => $vendorDir . '/laravelcollective/html/src/HtmlFacade.php',
     'Collective\\Html\\HtmlServiceProvider' => $vendorDir . '/laravelcollective/html/src/HtmlServiceProvider.php',
     'CreateArticlesTable' => $baseDir . '/database/migrations/2017_12_12_184631_create_articles_table.php',
+    'CreateBrandsTable' => $baseDir . '/database/migrations/2018_03_13_185857_create_brands_table.php',
     'CreateCategoriesTable' => $baseDir . '/database/migrations/2018_03_02_181755_create_categories_table.php',
     'CreateCategoryproductsTable' => $baseDir . '/database/migrations/2018_03_06_182951_create_categoryproducts_table.php',
     'CreateLanguagesTable' => $baseDir . '/database/migrations/2018_02_27_221023_create_languages_table.php',

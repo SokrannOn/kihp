@@ -311,6 +311,7 @@ class ComposerStaticInitfd76d284e5545d00c4278faf06f611d2
 
     public static $classMap = array (
         'App\\Article' => __DIR__ . '/../..' . '/app/Article.php',
+        'App\\Brand' => __DIR__ . '/../..' . '/app/Brand.php',
         'App\\Category' => __DIR__ . '/../..' . '/app/Category.php',
         'App\\Categoryproduct' => __DIR__ . '/../..' . '/app/Categoryproduct.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
@@ -328,6 +329,7 @@ class ComposerStaticInitfd76d284e5545d00c4278faf06f611d2
         'App\\Http\\Controllers\\PositionController' => __DIR__ . '/../..' . '/app/Http/Controllers/PositionController.php',
         'App\\Http\\Controllers\\RoleController' => __DIR__ . '/../..' . '/app/Http/Controllers/RoleController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
+        'App\\Http\\Controllers\\brandController' => __DIR__ . '/../..' . '/app/Http/Controllers/brandController.php',
         'App\\Http\\Controllers\\categoryProductController' => __DIR__ . '/../..' . '/app/Http/Controllers/categoryProductController.php',
         'App\\Http\\Controllers\\productController' => __DIR__ . '/../..' . '/app/Http/Controllers/productController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
@@ -360,6 +362,7 @@ class ComposerStaticInitfd76d284e5545d00c4278faf06f611d2
         'Collective\\Html\\HtmlFacade' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlFacade.php',
         'Collective\\Html\\HtmlServiceProvider' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlServiceProvider.php',
         'CreateArticlesTable' => __DIR__ . '/../..' . '/database/migrations/2017_12_12_184631_create_articles_table.php',
+        'CreateBrandsTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_13_185857_create_brands_table.php',
         'CreateCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_02_181755_create_categories_table.php',
         'CreateCategoryproductsTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_06_182951_create_categoryproducts_table.php',
         'CreateLanguagesTable' => __DIR__ . '/../..' . '/database/migrations/2018_02_27_221023_create_languages_table.php',
