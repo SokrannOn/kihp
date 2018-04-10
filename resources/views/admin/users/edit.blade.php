@@ -3,10 +3,13 @@
     {!! Form::model($user,['action'=>['UserController@update',$user->id],'method'=>'PATCH','files'=>true]) !!}
 
         <!-- Modal content-->
-        <div class="modal-content">
+        <div class="modal-content" style="border-radius: 5px;">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Edit User</h4>
+                <h4 class="modal-title"></h4>
+                <div class="{{\Illuminate\Support\Facades\Lang::locale()==='kh' ? 'kh-moul' : 'time-roman'  }}">
+                    {{trans('label.edit')}}
+                </div>
             </div>
             <div class="modal-body">
                 <div >
@@ -14,15 +17,15 @@
                             <div class="col-md-8">
                                 <div class="row">
                                     <div class="col-lg-6">
-                                        {!! Form::label('name','&nbsp;Name',['class'=>'edit-label']) !!}
-                                        {!! Form::text('name',null,['class'=>'edit-form-control','placeholder'=>'Name', 'required'=>true ]) !!}
+                                        <span class="{{Lang::locale()=='kh'? 'kh-os required' : 'arial'}}">{{trans('label.name')}}</span>
+                                        {!! Form::text('name',null,['class'=>Lang::locale()=='kh'? 'kh-os edit-form-control text-blue height-35' : 'arial edit-form-control text-blue height-35','required'=>'true','placeholder'=>trans('label.name')]) !!}
                                         @if($errors->has('name'))
                                             <span class="text-danger">{{$errors->first('name')}}</span>
                                         @endif
                                     </div>
                                     <div class="col-lg-6">
-                                        {!! Form::label('user_name','&nbsp;User Name',['class'=>'edit-label']) !!}
-                                        {!! Form::text('username',null,['class'=>'edit-form-control','placeholder'=>'User Name', 'required'=>true ]) !!}
+                                        <span class="{{Lang::locale()=='kh'? 'kh-os required' : 'arial'}}">{{trans('label.user_name')}}</span>
+                                        {!! Form::text('username',null,['class'=>Lang::locale()=='kh'? 'kh-os edit-form-control text-blue height-35' : 'arial edit-form-control text-blue height-35','required'=>'true','placeholder'=>trans('label.user_name')]) !!}
                                         @if($errors->has('username'))
                                             <span class="text-danger">{{$errors->first('username')}}</span>
                                         @endif
@@ -31,17 +34,17 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-6">
-                                        {!! Form::label('Role','&nbsp;Role',['class'=>'edit-label margin-left-5px']) !!}
-                                        {!! Form::select('role_id',$role,null,['class'=>'edit-form-control','placeholder'=>'Role name', 'required'=>true ]) !!}
-                                        @if($errors->has('role'))
-                                            <span class="text-danger">{{$errors->first('role')}}</span>
+                                        <span class="{{Lang::locale()=='kh'? 'kh-os required' : 'arial'}}">{{trans('label.role')}}</span>
+                                        {!! Form::select('role_id',$role,null,['class'=>Lang::locale()=='kh'? 'kh-os edit-form-control text-blue height-35' : 'arial edit-form-control text-blue height-35','placeholder'=>trans('label.choose_item'), 'required'=>true ]) !!}
+                                        @if($errors->has('role_id'))
+                                            <span class="text-danger">{{$errors->first('role_id')}}</span>
                                         @endif
                                     </div>
                                     <div class="col-lg-6">
-                                        {!! Form::label('Position','&nbsp;Position',['class'=>'edit-label']) !!}
-                                        {!! Form::select('position_id',$position,null,['class'=>'edit-form-control','placeholder'=>'Position name', 'required'=>true ]) !!}
-                                        @if($errors->has('position'))
-                                            <span class="text-danger">{{$errors->first('position')}}</span>
+                                        <span class="{{Lang::locale()=='kh'? 'kh-os required' : 'arial'}}">{{trans('label.position')}}</span>
+                                        {!! Form::select('position_id',$position,null,['class'=>Lang::locale()=='kh'? 'kh-os edit-form-control text-blue height-35' : 'arial edit-form-control text-blue height-35','placeholder'=>trans('label.choose_item'), 'required'=>true ]) !!}
+                                        @if($errors->has('position_id'))
+                                            <span class="text-danger">{{$errors->first('position_id')}}</span>
                                         @endif
                                     </div>
                                 </div>
@@ -60,7 +63,7 @@
                                     <div class="col-md-2"></div>
                                     <div class="col-lg-8">
                                         <div class="form-group">
-                                            <label for="imageEdit" class="btn btn-primary" style="padding: 4px 16px;">Browse</label>
+                                            <label for="imageEdit" class="{{Lang::locale()=='kh'? 'kh-os btn btn-primary' : 'arial btn btn-primary'}}" style="padding: 4px 16px;">{{trans('label.browse')}}</label>
                                             <input type="file" name="imageEdit" class="edit-form-control" id="imageEdit" onchange="loadFileEdit(event)" accept="image/*"style="display: none;">
                                             {{--{!! Form::file('image',['class'=>'btn display-none']) !!}--}}
                                             @if($errors->has('image'))
@@ -76,8 +79,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                {!! Form::submit('Update',['class'=>'btn btn-success btn-sm pull-left' ]) !!}
-                <a href="#" data-dismiss="modal" class="btn btn-default btn-sm pull-left">Close</a>
+                {!! Form::submit(trans('label.update'),['class'=>Lang::locale()==='kh' ? 'kh-os btn btn-primary btn-sm pull-left':'arial btn btn-primary btn-sm pull-left']) !!}
+                <a data-dismiss="modal" class="{{Lang::locale()==='kh' ? 'kh-os btn btn-danger btn-sm pull-left':'arial btn btn-danger btn-sm pull-left'}}">{{trans('label.close')}}</a>
             </div>
 
         </div>

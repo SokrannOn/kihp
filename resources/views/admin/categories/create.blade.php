@@ -178,7 +178,7 @@
             });
         }
 
-        function deleteLanguage(id) {
+        function deleteCat(id) {
             swal({
                 title: "{{trans('label.are_you_sure')}}",
                 text: "{{trans('label.are_you_sure_delete')}}",
@@ -197,7 +197,7 @@
                     .done(function(data) {
                         swal("Deleted!", "Your file was successfully deleted!", "success");
                         $(document).ready(function () {
-                            getViewLanguage();
+                            getViewCategory();
                         });
                     })
                     .error(function(data) {

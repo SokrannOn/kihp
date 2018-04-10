@@ -1,14 +1,16 @@
+@if($user->count())
+    <label class="{{Lang::locale()==='kh' ? 'kh-os' : 'arial'}}">{{trans('label.list_view')}}</label>
 <div class="table-responsive">
-    <table id="example1" class="table table-bordered table-striped">
+    <table id="table" class="table table-bordered table-striped {{Lang::locale()==='kh' ? 'kh-os' : 'arial'}}">
         <thead>
         <tr>
-            <th class="center">User ID</th>
-            <th class="center">Photo</th>
-            <th>Name</th>
-            <th>User Name</th>
-            <th>Position</th>
-            <th>Email</th>
-            <th style="width:20%; !important;" class="center">Action</th>
+            <th class="center">{{trans('label.No')}}</th>
+            <th class="center">{{trans('label.photo')}}</th>
+            <th>{{trans('label.name')}}</th>
+            <th>{{trans('label.user_name')}}</th>
+            <th>{{trans('label.position')}}</th>
+            <th>{{trans('label.email')}}</th>
+            <th style="width:20%; !important;" class="center">{{trans('label.action')}}</th>
         </tr>
         </thead>
         <tbody>
@@ -24,10 +26,10 @@
                 <td style="line-height: 50px" class="center">
 
 
-                    <a href="#" onclick='editUser("{{$u->id}}")' style="padding: 5px;" data-toggle="modal" data-target="#myModal"><i class="fa fa-edit"></i></a>
-                    <a href="#" onclick='resetPassword("{{$u->id}}")' data-toggle="modal" data-target=".bs-example-modal-sm" style="padding: 5px;"><i class="fa fa-refresh"></i></a>
-                    <a href="#" style="padding: 5px;" onclick='deleteUser("{{$u->id}}")'><i class="fa fa-trash" style="color: red;"></i></a>
-                    <a href="#" onclick='viewUser("{{$u->id}}")' style="padding: 5px;" data-toggle="modal" data-target="#viewUser" style="padding: 5px;"><i class="fa fa-eye" style=""></i></a>
+                    <a class="cursor-pointer icon-edit" onclick='editUser("{{$u->id}}")' style="padding: 5px;" data-toggle="modal" data-target="#editUser"><i class="fa fa-edit"></i></a>
+                    <a class="cursor-pointer" onclick='resetPassword("{{$u->id}}")' data-toggle="modal" data-target=".bs-example-modal-sm" style="padding: 5px;"><i class="fa fa-refresh"></i></a>
+                    <a class="cursor-pointer icon-trash" style="padding: 5px;" onclick='deleteUser("{{$u->id}}")'><i class="fa fa-trash" style="color: red;"></i></a>
+                    <a class="cursor-pointer icon-view" onclick='viewUser("{{$u->id}}")' style="padding: 5px;" data-toggle="modal" data-target="#viewUser" style="padding: 5px;"><i class="fa fa-eye" style=""></i></a>
 
                 </td>
         </tr>
@@ -36,3 +38,6 @@
         </tbody>
     </table>
 </div>
+@else
+    <h4 class="{{Lang::locale()==='kh' ? 'kh-os text-danger' : 'arial text-danger'}}" style="line-height: 50px;text-align: center;">{{trans('label.data_not_found')}}</h4>
+@endif

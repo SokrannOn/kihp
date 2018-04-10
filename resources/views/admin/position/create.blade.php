@@ -4,8 +4,8 @@
     <br>
     <div class="container-fluid">
         <div class="panel panel-default">
-            <div class="panel-heading">
-                Create Position
+            <div class="{{\Illuminate\Support\Facades\Lang::locale()==='kh' ? 'kh-moul panel-heading' : 'time-roman panel-heading'  }}">
+                {{trans('label.position')}}
             </div>
             <div class="panel-body">
                 <div class="row">
@@ -15,12 +15,10 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            {!! Form::label('Position Name')!!}
-                                            {!! Form::text('name',null,['class'=>'edit-form-control'])!!}
+                                            <span class="{{Lang::locale()=='kh'? 'kh-os required' : 'arial'}}">{{trans('label.name')}}</span>
+                                            {!! Form::text('name',null,['class'=>Lang::locale()=='kh'? 'kh-os edit-form-control text-blue height-35' : 'arial edit-form-control text-blue height-35','required'=>'true','placeholder'=>trans('label.name')]) !!}
                                             @if($errors->has('name'))
-                                                <span class="text-danger">
-                                                    {{$errors->first('name')}}
-                                                </span>
+                                                <span class="text-danger">{{$errors->first('name')}}</span>
                                             @endif
                                         </div>
                                     </div>
@@ -28,62 +26,32 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            {!! Form::label('Display Name')!!}
-                                            {!! Form::text('description',null,['class'=>'edit-form-control'])!!}
+                                            <span class="{{Lang::locale()=='kh'? 'kh-os required' : 'arial'}}">{{trans('label.description')}}</span>
+                                            {!! Form::text('description',null,['class'=>Lang::locale()=='kh'? 'kh-os edit-form-control text-blue height-35' : 'arial edit-form-control text-blue height-35','required'=>'true','placeholder'=>trans('label.description')]) !!}
                                             @if($errors->has('description'))
-                                                <span class="text-danger">
-                                                    {{$errors->first('description')}}
-                                                </span>
+                                                <span class="text-danger">{{$errors->first('description')}}</span>
                                             @endif
                                         </div>
                                     </div>
                                 </div>
                             <div class="form-group">
-                                {!! Form::submit('Create',['class'=>'btn btn-primary btn-sm']) !!}
-                                {!! Form::reset('Reset',['class'=>'btn btn-warning btn-sm']) !!}
+                                {!! Form::submit(trans('label.create'),['class'=>Lang::locale()==='kh' ? 'kh-os btn btn-success btn-sm':'arial btn btn-success btn-sm']) !!}
+                                {!! Form::reset(trans('label.reset'),['class'=>Lang::locale()==='kh' ? 'kh-os btn btn-warning btn-sm':'arial btn btn-warning btn-sm']) !!}
                             </div>
 
                         </div>
                     {!! Form::close() !!}
                         <div class="col-md-8">
-                            <label for="">List views</label>
-                            <div class="form-group">
-                                <table id="example1" class="table table-bordered table-striped">
-                                    <thead>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Position Name</th>
-                                        <th>Display Name</th>
-                                        <th>Created By</th>
-                                        <th style="width:20%; !important;" class="center">Action</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <?php $i=1;?>
-                                    @foreach($position as $p)
-                                        <tr>
-                                            <td>{{$i++}}</td>
-                                            <td>{{$p->name}}</td>
-                                            <td>{{$p->description}}</td>
-                                            <td>{{\App\User::where('id',$p->user_id)->value('name')}}</td>
-                                            <td class="center">
-                                                <a href="#" onclick="updatePos('{{$p->id}}')" class="btn btn-warning btn-xs" data-toggle="modal" data-target=".bs-example-modal-sm">Edit</a>
-                                                <a href="{{url('/admin/position/delete',[$p->id])}}" class="btn btn-danger btn-xs">Delete</a>
-
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                    </tbody>
-                                </table>
+                            <div id="viewPosition">
+                                <div class="center">
+                                    <i class="fa fa-spinner fa-spin" style="font-size:24px"> </i> <span>&nbsp; Wait...</span>
+                                </div>
                             </div>
-
                         </div>
                 </div>
 
-                <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-                    <div id="updatePosition">
+                <div id="position" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
 
-                    </div>
                 </div>
 
             </div>
@@ -96,17 +64,60 @@
 
 @section('script')
     <script type="text/javascript">
+        function getViewposition() {
+            $.ajax({
+                type:'get',
+                url:"{{url('/admin/position/index')}}",
+                dataType:'html',
+                success:function (data) {
+                    $('#viewPosition').html(data);
+                },
+                error:function (error) {
+                    console.log(error);
+                }
+            });
+        }
+        $(document).ready(function () {
+            getViewposition();
+        });
         function updatePos(id) {
             $.ajax({
                 type:'get',
                 url:"{{url('/admin/position/edit')}}"+"/"+id,
                 dataType:'html',
                 success:function (data) {
-                   $('#updatePosition').html(data);
+                   $('#position').html(data);
                 },
                 error:function (error) {
                     console.log(error);
                 }
+            });
+        }
+        function deletePos(id) {
+            swal({
+                title: "{{trans('label.are_you_sure')}}",
+                text: "{{trans('label.are_you_sure_delete')}}",
+                type: "warning",
+                showCancelButton:true,
+                closeOnConfirm: false,
+                cancelButtonText: "{{trans('label.no')}}",
+                confirmButtonText: "{{trans('label.yes')}}",
+                confirmButtonColor: "#ec6c62"
+            }, function() {
+                $.ajax({
+                    url : "{{url('/admin/position/delete')}}"+"/"+id,
+                    type: "get",
+                    dataType: 'html'
+                })
+                    .done(function(data) {
+                        swal("Deleted!", "Your file was successfully deleted!", "success");
+                        $(document).ready(function () {
+                            getViewposition();
+                        });
+                    })
+                    .error(function(data) {
+                        swal("Oops", "We couldn't connect to the server!", "error");
+                    });
             });
         }
     </script>

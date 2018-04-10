@@ -310,28 +310,50 @@ class ComposerStaticInitfd76d284e5545d00c4278faf06f611d2
     );
 
     public static $classMap = array (
+<<<<<<< HEAD
+        'App\\Activity' => __DIR__ . '/../..' . '/app/Activity.php',
+=======
+        'App\\Aboutus' => __DIR__ . '/../..' . '/app/Aboutus.php',
+>>>>>>> 6c5f9471c10610cfdca867719826f9cbd15d3543
         'App\\Article' => __DIR__ . '/../..' . '/app/Article.php',
         'App\\Brand' => __DIR__ . '/../..' . '/app/Brand.php',
+<<<<<<< HEAD
+=======
+        'App\\Career' => __DIR__ . '/../..' . '/app/Career.php',
+>>>>>>> 4d1c881b0feea2ff9cff40ec255fe05297911e45
         'App\\Category' => __DIR__ . '/../..' . '/app/Category.php',
         'App\\Categoryproduct' => __DIR__ . '/../..' . '/app/Categoryproduct.php',
+        'App\\Client' => __DIR__ . '/../..' . '/app/Client.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
+        'App\\Contact' => __DIR__ . '/../..' . '/app/Contact.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\ArticleController' => __DIR__ . '/../..' . '/app/Http/Controllers/ArticleController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
+        'App\\Http\\Controllers\\CareerController' => __DIR__ . '/../..' . '/app/Http/Controllers/CareerController.php',
         'App\\Http\\Controllers\\CategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/CategoryController.php',
+        'App\\Http\\Controllers\\ClientController' => __DIR__ . '/../..' . '/app/Http/Controllers/ClientController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\DefaultController' => __DIR__ . '/../..' . '/app/Http/Controllers/DefaultController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\JobcategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/JobcategoryController.php',
+        'App\\Http\\Controllers\\JobtypeController' => __DIR__ . '/../..' . '/app/Http/Controllers/JobtypeController.php',
         'App\\Http\\Controllers\\LanguageController' => __DIR__ . '/../..' . '/app/Http/Controllers/LanguageController.php',
+        'App\\Http\\Controllers\\NewsController' => __DIR__ . '/../..' . '/app/Http/Controllers/NewsController.php',
         'App\\Http\\Controllers\\PositionController' => __DIR__ . '/../..' . '/app/Http/Controllers/PositionController.php',
         'App\\Http\\Controllers\\RoleController' => __DIR__ . '/../..' . '/app/Http/Controllers/RoleController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
+<<<<<<< HEAD
+=======
+        'App\\Http\\Controllers\\aboutUsController' => __DIR__ . '/../..' . '/app/Http/Controllers/aboutUsController.php',
+>>>>>>> 4d1c881b0feea2ff9cff40ec255fe05297911e45
         'App\\Http\\Controllers\\brandController' => __DIR__ . '/../..' . '/app/Http/Controllers/brandController.php',
         'App\\Http\\Controllers\\categoryProductController' => __DIR__ . '/../..' . '/app/Http/Controllers/categoryProductController.php',
+        'App\\Http\\Controllers\\priceLishController' => __DIR__ . '/../..' . '/app/Http/Controllers/priceLishController.php',
         'App\\Http\\Controllers\\productController' => __DIR__ . '/../..' . '/app/Http/Controllers/productController.php',
+        'App\\Http\\Controllers\\promotionController' => __DIR__ . '/../..' . '/app/Http/Controllers/promotionController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Checklogin' => __DIR__ . '/../..' . '/app/Http/Middleware/Checklogin.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -339,9 +361,14 @@ class ComposerStaticInitfd76d284e5545d00c4278faf06f611d2
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Http\\Middleware\\switchLanguage' => __DIR__ . '/../..' . '/app/Http/Middleware/switchLanguage.php',
+        'App\\Jobcategory' => __DIR__ . '/../..' . '/app/Jobcategory.php',
+        'App\\Jobtype' => __DIR__ . '/../..' . '/app/Jobtype.php',
         'App\\Language' => __DIR__ . '/../..' . '/app/Language.php',
+        'App\\Photoproduct' => __DIR__ . '/../..' . '/app/Photoproduct.php',
         'App\\Position' => __DIR__ . '/../..' . '/app/Position.php',
+        'App\\Pricelist' => __DIR__ . '/../..' . '/app/Pricelist.php',
         'App\\Product' => __DIR__ . '/../..' . '/app/Product.php',
+        'App\\Promotion' => __DIR__ . '/../..' . '/app/Promotion.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -361,17 +388,47 @@ class ComposerStaticInitfd76d284e5545d00c4278faf06f611d2
         'Collective\\Html\\HtmlBuilder' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlBuilder.php',
         'Collective\\Html\\HtmlFacade' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlFacade.php',
         'Collective\\Html\\HtmlServiceProvider' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlServiceProvider.php',
+<<<<<<< HEAD
+        'CreateActivitiesTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_23_183859_create_activities_table.php',
+=======
+        'CreateAboutusesTable' => __DIR__ . '/../..' . '/database/migrations/2018_04_01_134327_create_aboutuses_table.php',
+>>>>>>> 6c5f9471c10610cfdca867719826f9cbd15d3543
         'CreateArticlesTable' => __DIR__ . '/../..' . '/database/migrations/2017_12_12_184631_create_articles_table.php',
         'CreateBrandsTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_13_185857_create_brands_table.php',
+<<<<<<< HEAD
+=======
+        'CreateCareersTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_29_175846_create_careers_table.php',
+>>>>>>> 4d1c881b0feea2ff9cff40ec255fe05297911e45
         'CreateCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_02_181755_create_categories_table.php',
         'CreateCategoryproductsTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_06_182951_create_categoryproducts_table.php',
+        'CreateClientsTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_15_100409_create_clients_table.php',
+        'CreateContactsTable' => __DIR__ . '/../..' . '/database/migrations/2018_04_04_162209_create_contacts_table.php',
+        'CreateJobcategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_28_192020_create_jobcategories_table.php',
+        'CreateJobtypesTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_28_214904_create_jobtypes_table.php',
         'CreateLanguagesTable' => __DIR__ . '/../..' . '/database/migrations/2018_02_27_221023_create_languages_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+        'CreatePhotoproductsTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_23_183542_create_photoproducts_table.php',
         'CreatePositionsTable' => __DIR__ . '/../..' . '/database/migrations/2017_11_22_175734_create_positions_table.php',
+        'CreatePricelistsTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_16_201041_create_pricelists_table.php',
         'CreateProductsTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_13_180412_create_products_table.php',
+        'CreatePromotionsTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_29_184009_create_promotions_table.php',
         'CreateRolesTable' => __DIR__ . '/../..' . '/database/migrations/2017_11_22_175923_create_roles_table.php',
+<<<<<<< HEAD
+        'CreateTableActivityLanguage' => __DIR__ . '/../..' . '/database/migrations/2018_03_23_184250_create_table_activity_language.php',
+        'CreateTableCareerLanguage' => __DIR__ . '/../..' . '/database/migrations/2018_03_29_180206_create_table_career_language.php',
         'CreateTableCategoryLanguage' => __DIR__ . '/../..' . '/database/migrations/2018_03_05_184118_create_table_category_language.php',
         'CreateTableCategoryproductLanguage' => __DIR__ . '/../..' . '/database/migrations/2018_03_09_180131_create_table_categoryproduct_language.php',
+        'CreateTableClientLanguage' => __DIR__ . '/../..' . '/database/migrations/2018_03_15_101103_create_table_client_language.php',
+        'CreateTableJobcategoryLanguage' => __DIR__ . '/../..' . '/database/migrations/2018_03_28_192233_create_table_jobcategory_language.php',
+        'CreateTableJobtypeLanguage' => __DIR__ . '/../..' . '/database/migrations/2018_03_28_215252_create_table_jobtype_language.php',
+=======
+        'CreateTabelLanguageProduct' => __DIR__ . '/../..' . '/database/migrations/2018_03_23_182052_create_tabel_language_product.php',
+        'CreateTableAboutusLanguage' => __DIR__ . '/../..' . '/database/migrations/2018_04_01_135429_create_table_aboutus_language.php',
+        'CreateTableCategoryLanguage' => __DIR__ . '/../..' . '/database/migrations/2018_03_05_184118_create_table_category_language.php',
+        'CreateTableCategoryproductLanguage' => __DIR__ . '/../..' . '/database/migrations/2018_03_09_180131_create_table_categoryproduct_language.php',
+        'CreateTableClientLanguage' => __DIR__ . '/../..' . '/database/migrations/2018_03_15_101103_create_table_client_language.php',
+        'CreateTableLanguagePromotion' => __DIR__ . '/../..' . '/database/migrations/2018_03_29_185209_create_table_language_promotion.php',
+>>>>>>> 6c5f9471c10610cfdca867719826f9cbd15d3543
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/AbstractField.php',
         'Cron\\CronExpression' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/CronExpression.php',

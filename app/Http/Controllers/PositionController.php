@@ -9,10 +9,15 @@ use Illuminate\View\View;
 
 class PositionController extends Controller
 {
+    public function index()
+    {
+        $position = Position::all();
+        return view('admin.position.index',compact('position'));
+
+    }
 
     public function createPosition(){
-        $position = Position::all();
-        return view('admin.position.create',compact('position'));
+        return view('admin.position.create');
     }
 
     public function store(Request $request){
@@ -51,7 +56,6 @@ class PositionController extends Controller
 
         $p=Position::find($id);
         $p->delete();
-        return redirect('/admin/position/create');
     }
 
 
